@@ -16,10 +16,10 @@
                 </inertia>
             </inertial>
             <collision name='base_link_collision'>
-                <pose>0 0 0 0 -0 0</pose>
+                <pose>0 0 0.02 0 0 0</pose>
                 <geometry>
                     <box>
-                        <size>0.50 0.25 0.1072</size>        <!-- V = 0.0134 m^3. Keep X=0.50, Y=0.25 and solve Z -->
+                        <size>0.50 0.25 0.108</size>        <!-- V = 0.0135 m^3. Keep X=0.50, Y=0.25 and solve Z -->
                     </box>
                 </geometry>
                 <surface>
@@ -129,7 +129,7 @@
             <child>thruster0</child>
         </joint>
         <link name="thruster0">
-            <pose>0.14 -0.10 -0.06 0 1.570796 -2.356194</pose>
+            <pose>0.14 -0.10 -0.06 0 1.570796 0.785398</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -163,7 +163,7 @@
             <child>thruster1</child>
         </joint>
         <link name="thruster1">
-            <pose>0.14 0.10 -0.06 0 1.570796 2.356194</pose>
+            <pose>0.14 0.10 -0.06 0 1.570796 -0.785398</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -198,7 +198,7 @@
             <child>thruster2</child>
         </joint>
         <link name="thruster2">
-            <pose>-0.14 -0.10 -0.06 0 1.570796 -0.78539815</pose>
+            <pose>-0.14 -0.10 -0.06 0 1.570796 -0.785398</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -232,7 +232,7 @@
             <child>thruster3</child>
         </joint>
         <link name="thruster3">
-            <pose>-0.14 0.10 -0.06 0 1.570796 0.78539815</pose>
+            <pose>-0.14 0.10 -0.06 0 1.570796 0.785398</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -266,7 +266,7 @@
             <child>thruster4</child>
         </joint>
         <link name="thruster4">
-            <pose>0.12 -0.22 0.0 3.1415 0 0</pose>
+            <pose>0.12 -0.22 0.0 0.0 0 0</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -368,7 +368,7 @@
             <child>thruster7</child>
         </joint>
         <link name="thruster7">
-            <pose>-0.12 0.22 0.0 3.1415 0 0</pose>
+            <pose>-0.12 0.22 0.0 0.0 0 0</pose>
             <inertial>
                 <mass>0.05</mass>
                 <inertia>
@@ -410,8 +410,8 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster1_joint</jointName>
@@ -433,14 +433,14 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster2_joint</jointName>
             <linkName>thruster2</linkName>
             <motorNumber>2</motorNumber>
-            <turningDirection>ccw</turningDirection>
+            <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
             <maxRotVelocity>1100.0</maxRotVelocity>
@@ -456,14 +456,14 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster3_joint</jointName>
             <linkName>thruster3</linkName>
             <motorNumber>3</motorNumber>
-            <turningDirection>ccw</turningDirection>
+            <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
             <maxRotVelocity>1100.0</maxRotVelocity>
@@ -479,8 +479,8 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster4_joint</jointName>
@@ -502,14 +502,14 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster5_joint</jointName>
             <linkName>thruster5</linkName>
             <motorNumber>5</motorNumber>
-            <turningDirection>ccw</turningDirection>
+            <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
             <maxRotVelocity>1100.0</maxRotVelocity>
@@ -525,14 +525,14 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster6_joint</jointName>
             <linkName>thruster6</linkName>
             <motorNumber>6</motorNumber>
-            <turningDirection>ccw</turningDirection>
+            <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
             <maxRotVelocity>1100.0</maxRotVelocity>
@@ -548,8 +548,8 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
         <plugin filename="libGenericMotorModelPlugin.so" name="gz::sim::systems::GenericMotorModel">
             <jointName>thruster7_joint</jointName>
@@ -571,8 +571,8 @@
             <minDutyCycle>1100</minDutyCycle>
             <maxDutyCycle>1900</maxDutyCycle>
             <bidirectionalMotor>1</bidirectionalMotor>
-            <positiveThrustPolynomial>[-2.20545111e-01, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
-            <negativeThrustPolynomial>[-1.25983096e-01, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
+            <positiveThrustPolynomial>[0.0, 2.37936891e+00, 1.49248519e+02, -3.27398031e+02, 4.36609803e+02, -1.94364029e+02]</positiveThrustPolynomial>
+            <negativeThrustPolynomial>[0.0, 3.42623942e-01, 1.34413692e+02, -2.84606487e+02, 3.51715475e+02, -1.52174269e+02]</negativeThrustPolynomial>
         </plugin>
 
         <plugin filename="gz-sim-hydrodynamics-system" name="gz::sim::systems::Hydrodynamics">
