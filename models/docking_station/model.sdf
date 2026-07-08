@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="docking_station">
+    <static>true</static>
+
+    <link name="docking_station_link">
+      <visual name="docking_station_visual">
+        <geometry>
+          <mesh>
+            <uri>model://docking_station/meshes/docking_station.stl</uri>
+            <!-- CAD mesh is in millimetres; Gazebo uses metres. -->
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.45 0.48 0.50 1</ambient>
+          <diffuse>0.45 0.48 0.50 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <!-- For first tests this detailed mesh collision is convenient.
+           If the simulation becomes slow or contact unstable, replace it with
+           simplified box/cylinder collisions around the rails/funnel. -->
+      <collision name="docking_station_collision">
+        <geometry>
+          <mesh>
+            <uri>model://docking_station/meshes/docking_station.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
