@@ -235,10 +235,6 @@
           <density>1</density>
         </density_change>
       </graded_buoyancy>
-      <!-- Restrict buoyancy to just the robot link(s) -->
-      <enable>uuv_bluerov2_heavy::base_link</enable>
-      <!-- PX4 often spawns with a suffix like _0 -->
-      <enable>uuv_bluerov2_heavy_0::base_link</enable>
     </plugin>
   </world>
 </sdf>
